@@ -15,7 +15,7 @@ var cookieParser = require("cookie-parser");
 
 var client_id = "5737379c912a4127bd009ea65f0fa760"; // Your client id
 var client_secret = "e14ce407075e4dc4b032d54d4178a108"; // Your secret
-var redirect_uri = "http://localhost:8888/callback"; // Your redirect uri
+var redirect_uri = "https://evening-headland-31139.herokuapp.com/callback"; // Your redirect uri
 
 /**
  * Generates a random string containing numbers and letters
@@ -104,7 +104,7 @@ app.get("/callback", function(req, res) {
         });
 
         // we can also pass the token to the browser to make requests from there
-        res.redirect("http://localhost:3000/#" +
+        res.redirect("https://evening-headland-31139.herokuapp.com/#" +
           querystring.stringify({
             access_token: access_token,
             refresh_token: refresh_token

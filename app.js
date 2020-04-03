@@ -34,6 +34,7 @@ app.get('/callback', function(req, res) {
       'Authorization': 'Basic ' + (new Buffer(
         client_id + ':' + client_secret
       ).toString('base64'))
+
     },
     json: true
   }
@@ -47,3 +48,4 @@ app.get('/callback', function(req, res) {
 let port = process.env.PORT || 8888
 console.log(`Listening on port ${port}. Go /login to initiate authentication flow.`)
 app.listen(port)
+

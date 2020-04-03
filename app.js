@@ -15,7 +15,7 @@ var cookieParser = require("cookie-parser");
 
 var client_id = "5737379c912a4127bd009ea65f0fa760"; // Your client id
 var client_secret = "e14ce407075e4dc4b032d54d4178a108"; // Your secret
-var redirect_uri = "https://evening-headland-31139.herokuapp.com/callback"; // Your redirect uri
+var redirect_uri = "https://auduo-backend.herokuapp.com/callback"; // Your redirect uri
 
 /**
  * Generates a random string containing numbers and letters
@@ -104,7 +104,7 @@ app.get("/callback", function(req, res) {
         });
 
         // we can also pass the token to the browser to make requests from there
-        res.redirect("https://evening-headland-31139.herokuapp.com/#" +
+        res.redirect("https://auduo-frontend.herokuapp.com" +
           querystring.stringify({
             access_token: access_token,
             refresh_token: refresh_token
@@ -143,5 +143,7 @@ app.get("/refresh_token", function(req, res) {
   });
 });
 
-console.log("Listening on 8888");
-app.listen(8888);
+
+let port = process.env.PORT || 8888
+console.log("Listening on port ${port}");
+app.listen(port);

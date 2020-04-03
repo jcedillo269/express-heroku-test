@@ -14,5 +14,4 @@
     "start": "node app.js",
     "build": "node app.js"
   }
-
 }
